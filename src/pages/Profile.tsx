@@ -60,9 +60,9 @@ export function Profile() {
 
       <main className="flex-1 md:ml-64 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10">
 
-        <div className="mb-8">
-          <h1 className="text-4xl font-black text-[#1d2a3a]">Perfil</h1>
-          <p className="text-gray-500 mt-2">Suas informações e progresso como viajante do tempo.</p>
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-4xl font-black text-[#1d2a3a]">Perfil</h1>
+          <p className="text-gray-500 mt-1 text-sm md:text-base">Suas informações e progresso como viajante do tempo.</p>
         </div>
 
         {loading ? (

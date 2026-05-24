@@ -262,9 +262,7 @@ export function Timeline() {
           {/* TIMELINE + HEADER */}
           <div
             className="flex-1 transition-all duration-300"
-            style={{
-              marginRight: selectedEvent ? "520px" : "0px"
-            }}
+            style={{ marginRight: selectedEvent && window.innerWidth >= 768 ? "520px" : "0px" }}
           >
 
             {/* HEADER */}

@@ -18,18 +18,27 @@ export function EventPanel({ event, units, onClose, onSelectUnit }: Props) {
   if (!event) return null;
 
   return (
-    <div
-      className="
-        fixed right-0 top-0
-        w-[520px] h-screen
-        bg-[#f6f3eb]
-        border-l border-[#e5e0d6]
-        flex flex-col
-        z-50
-      "
-    >
+    <>
+      {/* overlay escuro no mobile */}
+      <div className="fixed inset-0 bg-black/30 z-40 md:hidden" onClick={onClose} />
+
+      <div
+        className="
+          fixed z-50
+          bg-[#f6f3eb]
+          border-[#e5e0d6]
+          flex flex-col
+          bottom-0 left-0 right-0 h-[85vh] rounded-t-3xl border-t
+          md:bottom-auto md:left-auto md:right-0 md:top-0 md:w-[520px] md:h-screen md:rounded-none md:border-t-0 md:border-l
+        "
+      >
+      {/* handle mobile */}
+      <div className="flex justify-center pt-3 pb-1 md:hidden">
+        <div className="w-10 h-1 rounded-full bg-[#d6c9a8]" />
+      </div>
+
       {/* HEADER */}
-      <div className="px-6 pt-6 pb-2 flex justify-between items-start">
+      <div className="px-6 pt-4 md:pt-6 pb-2 flex justify-between items-start">
         <div>
           <p className="text-sm text-gray-500">{event.period}</p>
           <h2 className="text-xl font-black text-gray-800">
@@ -122,5 +131,6 @@ export function EventPanel({ event, units, onClose, onSelectUnit }: Props) {
 
       </div>
     </div>
+    </>
   );
 }
