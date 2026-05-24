@@ -56,7 +56,7 @@ export function Assessment() {
       <div className="flex-1 md:ml-64 flex flex-col md:flex-row gap-6 md:gap-8 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10 items-start">
 
         {/* ── COLUNA ESQUERDA: lista ── */}
-        <div className="flex-1 min-w-0 w-full order-last md:order-first">
+        <div className="flex-1 min-w-0 w-full">
 
           <div className="mb-6 md:mb-8">
             <h1 className="text-2xl md:text-4xl font-black text-[#1d2a3a]">Avaliações</h1>
@@ -182,7 +182,7 @@ export function Assessment() {
           const approved = allAssessments.filter(a => a.previousApproved).length;
 
           return (
-            <div className="w-full md:w-64 flex-shrink-0 md:sticky top-10 space-y-4 order-first md:order-last">
+            <div className="w-full md:w-64 flex-shrink-0 md:sticky top-10 space-y-4">
               <div className="bg-white border border-[#e8dfcf] rounded-3xl p-6 shadow-sm space-y-4">
                 <h3 className="text-sm font-black text-[#2d2d2d] uppercase tracking-wide">Seu progresso</h3>
 

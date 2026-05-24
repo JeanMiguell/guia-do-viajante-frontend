@@ -402,7 +402,7 @@ export function TimelineSidebar() {
 
           {/* Painel expandido à direita da sidebar (desktop) / cobrindo tela (mobile) */}
           <div
-            className="fixed top-0 h-screen w-80 bg-[#f6f3eb] border-r z-50 flex flex-col shadow-xl left-0 md:left-64"
+            className="fixed top-0 h-screen bg-[#f6f3eb] border-r z-50 flex flex-col shadow-xl left-0 right-0 md:right-auto md:w-80 md:left-64"
             style={{ borderColor: BORDER }}
           >
             {/* Header */}

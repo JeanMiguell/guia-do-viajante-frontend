@@ -67,13 +67,13 @@ export function Timelines() {
 
       <div className="flex-1 pb-24 md:pb-0">
 
-        <header className="px-10 py-8 border-b border-[#e5e0d6]">
+        <header className="px-4 md:px-10 py-6 md:py-8 border-b border-[#e5e0d6]">
 
-          <h1 className="text-4xl font-black text-[#1d2a3a]">
+          <h1 className="text-2xl md:text-4xl font-black text-[#1d2a3a]">
             Escolha uma linha do tempo
           </h1>
 
-          <p className="text-gray-500 mt-2">
+          <p className="text-gray-500 mt-1 text-sm md:text-base">
             Selecione uma para começar a aprender
           </p>
 
@@ -89,16 +89,7 @@ export function Timelines() {
 
         {
           !loading && (
-            <div
-              className="
-                p-10
-                grid
-                grid-cols-1
-                md:grid-cols-2
-                xl:grid-cols-3
-                gap-8
-              "
-            >
+            <div className="p-4 md:p-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
 
               {
                 timelines.map((t) => {
