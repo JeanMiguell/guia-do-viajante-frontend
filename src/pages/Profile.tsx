@@ -58,7 +58,7 @@ export function Profile() {
     <div className="min-h-screen flex bg-[#f6f3eb]">
       <Sidebar className="hidden md:flex fixed h-screen" />
 
-      <main className="flex-1 md:ml-64 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10">
+      <main className="flex-1 md:ml-64 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10 overflow-x-hidden min-w-0">
 
         <div className="mb-6 md:mb-8">
           <h1 className="text-2xl md:text-4xl font-black text-[#1d2a3a]">Perfil</h1>
@@ -123,7 +123,7 @@ export function Profile() {
                           setCurrentTimelineId(t.id);
                           navigate(`/timeline/${t.id}`);
                         }}
-                        className="w-full flex items-center gap-4 p-4 bg-white border border-[#e8dfcf] rounded-3xl shadow-sm hover:border-[#d6a84f] hover:shadow-md hover:-translate-y-0.5 transition-all text-left"
+                        className="w-full flex items-center gap-3 p-4 bg-white border border-[#e8dfcf] rounded-3xl shadow-sm hover:border-[#d6a84f] hover:shadow-md hover:-translate-y-0.5 transition-all text-left overflow-hidden"
                       >
                         <div className="w-12 h-12 rounded-2xl bg-[#f4ead7] border border-[#e8dfcf] flex-shrink-0 overflow-hidden">
                           {t.imageUrl
