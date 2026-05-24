@@ -53,7 +53,8 @@ export function Assessment() {
     <div className="min-h-screen flex bg-[#f6f3eb]">
       <Sidebar className="hidden md:flex fixed h-screen" />
 
-      <div className="flex-1 md:ml-64 flex flex-col md:flex-row gap-6 md:gap-8 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10 items-start">
+      <div className="flex-1 md:ml-64 min-w-0 px-4 md:px-10 py-6 md:py-10 pb-24 md:pb-10">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start w-full">
 
         {/* ── COLUNA ESQUERDA: lista ── */}
         <div className="flex-1 min-w-0 w-full">
@@ -234,6 +235,7 @@ export function Assessment() {
             </div>
           );
         })()}
+      </div>
       </div>
 
       {selected && (

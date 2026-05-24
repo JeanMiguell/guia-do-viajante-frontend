@@ -70,7 +70,7 @@ export function Profile() {
             <div className="w-10 h-10 rounded-full border-4 border-[#d6a84f] border-t-transparent animate-spin" />
           </div>
         ) : (
-          <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="flex flex-col md:flex-row gap-8 items-start w-full min-w-0">
 
             {/* ── COLUNA ESQUERDA ── */}
             <div className="flex flex-col gap-4 w-full md:w-80 md:flex-shrink-0">
@@ -107,7 +107,7 @@ export function Profile() {
             </div>
 
             {/* ── COLUNA DIREITA ── */}
-            <div className="flex-1 min-w-0 space-y-6">
+            <div className="flex-1 min-w-0 w-full space-y-6">
 
               {/* Linhas do tempo */}
               {timelines.length > 0 && (
