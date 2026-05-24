@@ -18,16 +18,24 @@ type Props = {
 export function EventPanel({ event, units, onClose, onSelectUnit }: Props) {
   if (!event) return null;
 
-  const touchStartY = useRef<number>(0);
+  const startY = useRef<number>(0);
+  const dragging = useRef(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartY.current = e.touches[0].clientY;
+    startY.current = e.touches[0].clientY;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (e.changedTouches[0].clientY - startY.current > 80) onClose();
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const delta = e.changedTouches[0].clientY - touchStartY.current;
-    if (delta > 80) onClose();
+  const handleMouseDown = (e: React.MouseEvent) => {
+    dragging.current = true;
+    startY.current = e.clientY;
+  };
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (dragging.current && e.clientY - startY.current > 80) onClose();
+    dragging.current = false;
   };
 
   return (
@@ -48,9 +56,11 @@ export function EventPanel({ event, units, onClose, onSelectUnit }: Props) {
       >
         {/* handle mobile — área de swipe */}
         <div
-          className="flex justify-center pt-3 pb-2 md:hidden cursor-grab"
+          className="flex justify-center pt-3 pb-2 cursor-grab select-none"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
         >
           <div className="w-10 h-1 rounded-full bg-[#d6c9a8]" />
         </div>
