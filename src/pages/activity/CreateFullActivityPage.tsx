@@ -254,25 +254,27 @@ export function CreateFullActivityPage({ initialData, onSubmit, isEdit = false }
 
             <main className="flex-1 px-4 md:px-10 py-6 md:py-10">
                 {/* Header */}
-                <div className="mb-8 flex items-center justify-between">
-                    <div>
-                        <h1 className="text-4xl font-black text-[#2d2d2d]">
-                            {isEdit ? "Editar Atividade" : "Criar Atividade"}
-                        </h1>
-                        <p className="text-gray-500 mt-2">
-                            Preencha as informações e adicione as questões.
-                        </p>
+                <div className="mb-6 md:mb-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div>
+                            <h1 className="text-2xl md:text-4xl font-black text-[#2d2d2d]">
+                                {isEdit ? "Editar Atividade" : "Criar Atividade"}
+                            </h1>
+                            <p className="text-gray-500 mt-1 text-sm md:text-base">
+                                Preencha as informações e adicione as questões.
+                            </p>
+                        </div>
+                        {timelineId && (
+                            <button
+                                type="button"
+                                onClick={() => navigate(`/activities/timeline/${timelineId}`)}
+                                className="flex items-center gap-2 px-4 py-2.5 rounded-2xl border border-[#e8dfcf] text-gray-600 hover:border-[#d6a84f] hover:text-[#d6a84f] transition font-semibold text-sm self-start sm:self-auto whitespace-nowrap"
+                            >
+                                <AlertCircle size={16} />
+                                Ver atividades
+                            </button>
+                        )}
                     </div>
-                    {timelineId && (
-                        <button
-                            type="button"
-                            onClick={() => navigate(`/activities/timeline/${timelineId}`)}
-                            className="flex items-center gap-2 px-5 py-3 rounded-2xl border border-[#e8dfcf] text-gray-600 hover:border-[#d6a84f] hover:text-[#d6a84f] transition font-semibold text-sm"
-                        >
-                            <AlertCircle size={16} />
-                            Ver todas as atividades
-                        </button>
-                    )}
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -282,7 +284,7 @@ export function CreateFullActivityPage({ initialData, onSubmit, isEdit = false }
                         <div className="flex-1 min-w-0 space-y-6">
 
                             {/* Card: Informações */}
-                            <section className="bg-white border border-[#e8dfcf] rounded-3xl p-8 shadow-sm space-y-5">
+                            <section className="bg-white border border-[#e8dfcf] rounded-3xl p-5 md:p-8 shadow-sm space-y-5">
                                 <h2 className="text-xl font-black text-[#2d2d2d]">Informações da Atividade</h2>
 
                                 {/* Título */}

@@ -190,18 +190,18 @@ export function CreateFullTimelinePage({ initialData, onSubmit, isEdit = false }
                 <div className="w-full max-w-5xl">
 
                     {/* Header */}
-                    <div className="mb-8">
-                        <h1 className="text-4xl font-black text-[#2d2d2d]">
+                    <div className="mb-6 md:mb-8">
+                        <h1 className="text-2xl md:text-4xl font-black text-[#2d2d2d]">
                             {isEdit ? "Editar Linha do Tempo" : "Criar Linha do Tempo"}
                         </h1>
-                        <p className="text-gray-500 mt-2">
+                        <p className="text-gray-500 mt-1 text-sm md:text-base">
                             Cadastre a linha do tempo, tópicos, unidades e conteúdos em uma única estrutura.
                         </p>
                     </div>
 
                     {/* Abas */}
-                    <div className="flex gap-4 mb-8 border-b border-[#e8dfcf]">
-                        <div className="px-6 py-4 font-bold text-lg text-[#d6a84f] border-b-4 border-[#d6a84f]">
+                    <div className="flex gap-1 md:gap-4 mb-6 md:mb-8 border-b border-[#e8dfcf] overflow-x-auto">
+                        <div className="px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg text-[#d6a84f] border-b-4 border-[#d6a84f] whitespace-nowrap flex-shrink-0">
                             Linha do Tempo
                         </div>
                         <button
@@ -209,39 +209,39 @@ export function CreateFullTimelinePage({ initialData, onSubmit, isEdit = false }
                             onClick={() => { if (timelineId) navigate(`/activities/timeline/${timelineId}`); }}
                             disabled={!timelineId}
                             title={!timelineId ? "Salve a linha do tempo primeiro para gerenciar atividades" : undefined}
-                            className={`px-6 py-4 font-bold text-lg transition-all border-b-4 flex items-center gap-2 ${timelineId ? "text-gray-500 border-transparent hover:text-gray-700" : "text-gray-300 border-transparent cursor-not-allowed"}`}
+                            className={`px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg transition-all border-b-4 flex items-center gap-1 whitespace-nowrap flex-shrink-0 ${timelineId ? "text-gray-500 border-transparent hover:text-gray-700" : "text-gray-300 border-transparent cursor-not-allowed"}`}
                         >
                             Atividades
-                            {!timelineId && <AlertCircle size={18} className="text-gray-400" />}
+                            {!timelineId && <AlertCircle size={14} className="text-gray-400" />}
                         </button>
                         <button
                             type="button"
                             onClick={() => { if (timelineId) navigate(`/timelines/${timelineId}/students`); }}
                             disabled={!timelineId}
                             title={!timelineId ? "Salve a linha do tempo primeiro para convidar estudantes" : undefined}
-                            className={`px-6 py-4 font-bold text-lg transition-all border-b-4 flex items-center gap-2 ${timelineId ? "text-gray-500 border-transparent hover:text-gray-700" : "text-gray-300 border-transparent cursor-not-allowed"}`}
+                            className={`px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg transition-all border-b-4 flex items-center gap-1 whitespace-nowrap flex-shrink-0 ${timelineId ? "text-gray-500 border-transparent hover:text-gray-700" : "text-gray-300 border-transparent cursor-not-allowed"}`}
                         >
-                            <Users size={18} />
-                            Convidar Estudantes
-                            {!timelineId && <AlertCircle size={18} className="text-gray-400" />}
+                            <Users size={14} className="md:w-[18px] md:h-[18px]" />
+                            <span className="hidden sm:inline">Convidar </span>Estudantes
+                            {!timelineId && <AlertCircle size={14} className="text-gray-400" />}
                         </button>
                         <button
                             type="button"
                             onClick={() => { if (timelineId) navigate(`/timelines/${timelineId}/progress`); }}
                             disabled={!timelineId}
                             title={!timelineId ? "Salve a linha do tempo primeiro para ver o progresso" : undefined}
-                            className={`px-6 py-4 font-bold text-lg transition-all border-b-4 flex items-center gap-2 ${timelineId ? "text-gray-500 border-transparent hover:text-gray-700" : "text-gray-300 border-transparent cursor-not-allowed"}`}
+                            className={`px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg transition-all border-b-4 flex items-center gap-1 whitespace-nowrap flex-shrink-0 ${timelineId ? "text-gray-500 border-transparent hover:text-gray-700" : "text-gray-300 border-transparent cursor-not-allowed"}`}
                         >
-                            <BarChart3 size={18} />
+                            <BarChart3 size={14} className="md:w-[18px] md:h-[18px]" />
                             Progresso
-                            {!timelineId && <AlertCircle size={18} className="text-gray-400" />}
+                            {!timelineId && <AlertCircle size={14} className="text-gray-400" />}
                         </button>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-8">
 
                         {/* ── Informações da Linha do Tempo ── */}
-                        <section className="bg-white border border-[#e8dfcf] rounded-3xl p-8 shadow-sm space-y-6">
+                        <section className="bg-white border border-[#e8dfcf] rounded-3xl p-5 md:p-8 shadow-sm space-y-6">
                             <div>
                                 <h2 className="text-2xl font-black text-[#2d2d2d]">Informações da Linha do Tempo</h2>
                                 <p className="text-gray-500 mt-1">Dados principais da experiência de aprendizagem.</p>
