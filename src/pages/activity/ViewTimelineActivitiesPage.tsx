@@ -66,16 +66,16 @@ export function ViewTimelineActivitiesPage() {
         <div className="min-h-screen bg-[#f6f3eb] flex">
             <TimelineSidebar />
 
-            <main className="flex-1 px-10 py-10 flex justify-center">
-                <div className="w-full max-w-5xl">
+            <main className="flex-1 px-4 md:px-10 py-6 md:py-10 overflow-x-hidden flex justify-center min-w-0">
+                <div className="w-full max-w-5xl min-w-0">
 
                     {/* HEADER */}
-                    <div className="flex items-center justify-between mb-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8">
                         <div>
-                            <h1 className="text-4xl font-black text-[#2d2d2d]">
+                            <h1 className="text-2xl md:text-4xl font-black text-[#2d2d2d]">
                                 Atividades
                             </h1>
-                            <p className="text-gray-500 mt-2">
+                            <p className="text-gray-500 mt-1 text-sm md:text-base">
                                 Gerencie exercícios e avaliações da timeline.
                             </p>
                         </div>
@@ -92,7 +92,7 @@ export function ViewTimelineActivitiesPage() {
                     </div>
 
                     {/* ABAS DE NAVEGAÇÃO */}
-                    <div className="flex gap-4 mb-8 border-b border-[#e8dfcf]">
+                    <div className="flex gap-1 md:gap-4 mb-6 md:mb-8 border-b border-[#e8dfcf] overflow-x-auto">
 
                         <button
                             onClick={() => {
@@ -101,44 +101,44 @@ export function ViewTimelineActivitiesPage() {
                                 }
                             }}
                             disabled={!timelineId}
-                            className={`px-6 py-4 font-bold text-lg transition-all border-b-4 flex items-center gap-2 ${
+                            className={`px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg transition-all border-b-4 flex items-center gap-2 whitespace-nowrap flex-shrink-0 ${
                                 timelineId
                                     ? "text-gray-500 border-transparent hover:text-gray-700"
                                     : "text-gray-300 border-transparent cursor-not-allowed"
                             }`}
                         >
                             Linha do Tempo
-                            {!timelineId && <AlertCircle size={18} className="text-gray-400" />}
+                            {!timelineId && <AlertCircle size={16} className="text-gray-400" />}
                         </button>
 
-                        <div className="px-6 py-4 font-bold text-lg text-[#d6a84f] border-b-4 border-[#d6a84f] flex items-center gap-2">
+                        <div className="px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg text-[#d6a84f] border-b-4 border-[#d6a84f] flex items-center gap-2 whitespace-nowrap flex-shrink-0">
                             Atividades
                         </div>
 
                         <button
                             onClick={() => { if (timelineId) navigate(`/timelines/${timelineId}/students`); }}
                             disabled={!timelineId}
-                            className={`px-6 py-4 font-bold text-lg transition-all border-b-4 flex items-center gap-2 ${
+                            className={`px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg transition-all border-b-4 flex items-center gap-2 whitespace-nowrap flex-shrink-0 ${
                                 timelineId
                                     ? "text-gray-500 border-transparent hover:text-gray-700"
                                     : "text-gray-300 border-transparent cursor-not-allowed"
                             }`}
                         >
-                            <Users size={18} />
+                            <Users size={16} />
                             Convidar Estudantes
-                            {!timelineId && <AlertCircle size={18} className="text-gray-400" />}
+                            {!timelineId && <AlertCircle size={16} className="text-gray-400" />}
                         </button>
 
                         <button
                             onClick={() => { if (timelineId) navigate(`/timelines/${timelineId}/progress`); }}
                             disabled={!timelineId}
-                            className={`px-6 py-4 font-bold text-lg transition-all border-b-4 flex items-center gap-2 ${
+                            className={`px-3 md:px-6 py-3 md:py-4 font-bold text-sm md:text-lg transition-all border-b-4 flex items-center gap-2 whitespace-nowrap flex-shrink-0 ${
                                 timelineId
                                     ? "text-gray-500 border-transparent hover:text-gray-700"
                                     : "text-gray-300 border-transparent cursor-not-allowed"
                             }`}
                         >
-                            <BarChart3 size={18} />
+                            <BarChart3 size={16} />
                             Progresso
                         </button>
 
@@ -194,7 +194,7 @@ export function ViewTimelineActivitiesPage() {
                                 >
                                     {/* CABEÇALHO DO CARD */}
                                     <div
-                                        className="p-8 cursor-pointer"
+                                        className="p-5 md:p-8 cursor-pointer"
                                         onClick={() =>
                                             setExpandedId(
                                                 expanded ? null : activity.id ?? null
@@ -262,7 +262,7 @@ export function ViewTimelineActivitiesPage() {
 
                                     {/* QUESTÕES (EXPANDIDO) */}
                                     {expanded && (
-                                        <div className="border-t border-[#ece3d4] px-8 py-8 bg-[#fcfbf8] space-y-6">
+                                        <div className="border-t border-[#ece3d4] px-4 md:px-8 py-5 md:py-8 bg-[#fcfbf8] space-y-6">
                                             {activity.questions.map((question: QuestionFormDTO, questionIndex: number) => (
                                                 <div
                                                     key={question.id ?? questionIndex}
